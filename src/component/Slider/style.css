@@ -1,0 +1,32 @@
+.bottomCarousel .rec.rec-dot {
+    border-radius: 4px;
+    height: 4px;
+    width: 35px;
+    background-color:#6b6a67;
+    box-shadow: none;
+  }
+  .bottomCarousel .rec.rec-dot_active{
+    background-color: black;
+    box-shadow: none;
+  }
+  .bottomCarousel button:hover button:focus{
+    box-shadow: none;
+  }
+  .topCarousel .rec-carousel-item{
+    height:600px;
+  }
+  .topCarousel .rec-item-wrapper{
+    height: 100%;
+  }
+  .topCarousel .rec.rec-dot{
+      width: 20px;
+      height:20px;
+      margin-top:-100px;
+      z-index: 200;
+      border: 1 px solid #ffffff;
+
+  }
+  .topCarousel  .rec.rec-dot_active{
+    background-color: #ffffff;
+    box-shadow: none;
+  }
