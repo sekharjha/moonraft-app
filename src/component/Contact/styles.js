@@ -135,7 +135,7 @@ export const data =styled.div `
 `
 export const link =styled.a `
     text-decoration:none;
-    color:#44b272;
+    color:${props => props.color};
 `
 export const name_email =styled.div `
     @media (min-width:1000px){
@@ -194,13 +194,13 @@ export const button = styled.button `
     height:60px;
     border-radius:30px;
     font-size:18px;
-    color:#44b272;
-    border-color:#44b272;
+    color: ${props => props.color};
+    border-color:${props => props.color};
     font-weight:bold;
     background:white;
     &:hover{
         color:white;
-        background:#44b272;
+        background:${props => props.color};
         cursor: pointer;
     }
     `

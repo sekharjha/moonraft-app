@@ -7,7 +7,8 @@ import four from '../../Assets/Images/logo-04.png'
 import five from '../../Assets/Images/logo-05.png'
 import six from '../../Assets/Images/logo-06.png'
 import seven from '../../Assets/Images/logo-07.png'
-import {Container, ContainerHead, Item, StyledDiv} from './style'
+import { ThemeContext } from "../../Theme";
+import {Container, ContainerHead, Item} from './style'
 import  './style.css'
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -15,7 +16,7 @@ const breakPoints = [
     { width: 768, itemsToShow: 5},
   ];
 export default class BottomCarousel extends Component {
-
+  static contextType = ThemeContext;
     
     state = {
         items: [
@@ -30,11 +31,12 @@ export default class BottomCarousel extends Component {
       }
       
     render() {
+      const { darkColor } = this.context;
         const { items } = this.state;
         return (
             <div>
               <Container>
-                <ContainerHead>Some Of Our Happy Clients, <span style={{color:'#44b272'}}>Join To Them!</span></ContainerHead>
+                <ContainerHead>Some Of Our Happy Clients, <span style={{color:darkColor}}>Join To Them!</span></ContainerHead>
                 <Carousel className ="bottomCarousel" breakPoints={breakPoints} showArrows={false}>
                     {items.map(item => <Item key={item.id}><img src={item.url}></img></Item>)}
                 </Carousel>

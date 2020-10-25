@@ -4,7 +4,7 @@ export const Icon = styled.i`
     line-height: 95px;
     position: absolute;
     left: 0;
-    color:#44b272;
+    color:${props => props.color};
     &:hover {
         color:white
     }
@@ -16,7 +16,7 @@ export const CardBody = styled.div`
     height:100px;
     padding: 40px;
     &:hover {
-      background-color:#44B272;
+      background-color:${props => props.color};
       transition: 200ms ease-in;
       color:white;
   };

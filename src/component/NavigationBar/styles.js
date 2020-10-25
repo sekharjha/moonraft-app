@@ -10,8 +10,9 @@ export const nav_container = styled.ul `
         display:none;
     }
     
-    
 `
+
+
 
 export const nav_tabs = styled.li  `
     
@@ -25,7 +26,7 @@ export const nav_tabs = styled.li  `
     
     
     &:hover{
-        border-bottom: 3px solid #44B272;
+        border-bottom: 3px solid ${props => props.color};
     }
 `
 
@@ -94,7 +95,7 @@ export const mobile_nav_menu = styled.div `
     @media (max-width:1000px){
         display:block;
         width:93%;
-        background-color:#44b272;
+        background-color:${props => props.color};
         padding-left:20px;
         padding-top:17px;
         color:white;
