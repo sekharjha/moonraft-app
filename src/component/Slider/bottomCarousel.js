@@ -10,8 +10,8 @@ import seven from '../../Assets/Images/logo-07.png'
 import {Container, ContainerHead, Item, StyledDiv} from './style'
 import  './style.css'
 const breakPoints = [
-    { width: 1, itemsToShow: 2 },
-    { width: 550, itemsToShow: 4 },
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
     { width: 768, itemsToShow: 5},
   ];
 export default class BottomCarousel extends Component {

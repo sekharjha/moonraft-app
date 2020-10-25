@@ -11,12 +11,9 @@ export const Icon = styled.i`
 `
 export const CardBody = styled.div`
     flex: 1;
-    margin: 15px;
     background-color: #eeeeee;
     width:100%;
     height:100px;
-    padding-top:40px;
-    padding-bottom:40px;
     padding: 40px;
     &:hover {
       background-color:#44B272;

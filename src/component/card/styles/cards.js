@@ -30,15 +30,15 @@ export const Column = styled.div`
   flex-direction: column;
   text-align: left;
   margin-left: 0;
+  paddding-left:20px;
 `;
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(3,auto);
   grid-gap: 40px;
-
-  @media (max-width: 400px) {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(1,auto);
   }
 `;
 export const Link = styled.a`
