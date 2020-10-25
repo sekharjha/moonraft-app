@@ -6,6 +6,10 @@ export const Container = styled.div`
 export const ImageContainer  = styled.div`
     width:50%;
     height: 100vh;
+    @media (max-width: 1000px) {
+        display:none;
+      }
+    
 `
 export const FormContainer = styled.div`
     width:50%;
@@ -13,6 +17,9 @@ export const FormContainer = styled.div`
     display: flex;
     justify-content:center;
     flex-direction:column; 
+    @media (max-width: 1000px) {
+        width:100%;
+      }
     
 ` 
 export const Image = styled.img`
