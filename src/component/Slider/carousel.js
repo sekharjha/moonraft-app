@@ -18,12 +18,16 @@ class CarouselComponent extends Component {
     const { items } = this.state;
     return (<CarouselContainer>
       <Buttonleft color={darkColor} onClick={() => this.carousel.slidePrev()}><i class="fa fa-angle-right" aria-hidden="true"></i></Buttonleft>
-      <Carousel style ={{width:"100%",height:"100%"}}ref={ref => (this.carousel = ref)} className="topCarousel" enableAutoPlay = {true} showArrows={false}>
+
+
+      <Carousel style ={{width:"100%",height:"100%"}}ref={ref => (this.carousel = ref)} className="topCarousel" enableAutoPlay = {true} showArrows={false} >
     {items.map(item => <StyledDiv key={item.id}><Image src={item.url}></Image><ContentContainer><Heading>{item.heading}</Heading><Paragraph>{item.paragraph}</Paragraph>
-    <ButtonContainer><Button color={darkColor}>Purchase Now</Button></ButtonContainer>
+      <ButtonContainer><Button color={darkColor}>Purchase Now</Button></ButtonContainer>
     </ContentContainer>
     </StyledDiv>)}
       </Carousel>
+
+      
       <ButtonRight color={darkColor} onClick={() => this.carousel.slideNext()}><i class="fa fa-angle-left" aria-hidden="true"></i></ButtonRight>
       </CarouselContainer>
     )

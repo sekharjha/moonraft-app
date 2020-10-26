@@ -19,7 +19,7 @@ export const Item = styled.div`
   margin: 15px;
 `;
 export const Container = styled.div`
- 
+ padding-bottom:60px;
 `
 export const ContainerHead = styled.h3`
   padding-bottom:40px;

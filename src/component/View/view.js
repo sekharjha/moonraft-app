@@ -7,14 +7,13 @@ import {withRouter} from 'react-router-dom'
 import {Data} from './data'
 import {faShip,faBoxOpen,faHandHoldingWater,faCloud} from '@fortawesome/free-solid-svg-icons'
     const ViewPage = (props) => {
-        console.log(props.location.aboutProps.data.item)
         let index = props.location.aboutProps.index;
         const {heading,desription1,description2,date,location,category,subheading1,subheading2,subDescription} =   Data[index.index]; 
         const images = require.context('../../Assets/Images/', true);
                         let img = images('./' + props.location.aboutProps.data.item.imageName); 
     return(
         <div>
-            <styles.header>
+            <styles.header style={{backgroundImage:"{img}"}}>
                 <styles.title>{props.location.aboutProps.data.item.title}</styles.title>
             </styles.header>
             <styles.content>
