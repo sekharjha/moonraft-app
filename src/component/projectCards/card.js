@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Img from '../../Assets/Images/project-01.jpg'
 import './style.css'
 import {Image, Card,InactiveCard} from './style'
-import { Link } from 'react-router-dom'
 export default class card extends Component {
     state = {
         data:Img,

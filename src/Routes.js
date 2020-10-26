@@ -37,7 +37,7 @@ class Routes extends Component{
       <Switch>
         <Route exact path="/" component = {Home} />
         <Route path="/Contact" component = {Contact} />
-        <Route path="/View/:id" component = {View}/>
+        <Route path="/View" component = {View}/>
         <Route path="/signup" component = {SignUp}/>
       </Switch>
     </BrowserRouter>

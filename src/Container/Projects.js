@@ -4,7 +4,8 @@ import Cards from '../component/projectCards'
 import Card from '../component/projectCards/card'
 import {Data} from '../component/projectCards/data'
 import { ThemeContext } from "../Theme";
-export default class Projects extends Component {
+import {withRouter} from 'react-router-dom'
+ class Projects extends Component {
     static contextType = ThemeContext;
     constructor(props){
         super(props);
@@ -57,12 +58,15 @@ export default class Projects extends Component {
                 {Data.map((item,index)=>{
                         const images = require.context('../Assets/Images/', true);
                         let img = images('./' + item.imageName);
-                        console.log(this.state.type)
-                        console.log(item.type)
-                        console.log(index);
                         if(this.state.all||this.state.type===item.type)
                         return(
-                            <Link to="/View/${index}">
+                            <Link to={{
+                                pathname:'/View',
+                                aboutProps:{
+                                    data:{item},
+                                    index:{index}
+                                }
+                            }}>
                             <Cards.Column key={index}>
                                 <Card data={img} title = {item.title} subtitle = {item.subtitle} active = {1}/>
                             </Cards.Column>
@@ -80,3 +84,4 @@ export default class Projects extends Component {
         )
     }
 }
+export default withRouter(Projects)

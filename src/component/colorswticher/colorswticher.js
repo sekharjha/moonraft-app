@@ -50,6 +50,13 @@ export default class colorswticher extends Component {
             darkColor:"#f5e942",
         })
     }
+    changeColor_PURPLE = () =>{
+        const {changeTheme} = this.context;
+        changeTheme({
+            lightColor:"#a85cdb",
+            darkColor:"#a53deb",
+        })
+    }
     showHide(){
        this.setState({display: !this.state.display})
 
@@ -65,6 +72,7 @@ export default class colorswticher extends Component {
                 <Button color="#44b272" onClick={this.changeColor_GREEN}></Button>
                 <Button color="#3448c5" onClick={this.changeColor_BLUE}></Button>
                 <Button color="#f5e942" onClick={this.changeColor_YELLOW}></Button>
+                <Button color="#a53deb" onClick={this.changeColor_PURPLE}></Button>
                 </ButtonContainer> 
                 </Container>  
             </div>
