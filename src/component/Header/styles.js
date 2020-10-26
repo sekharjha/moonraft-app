@@ -4,7 +4,7 @@ export const info = styled.div `
     display:flex;
     
     
-    margin-left:13%;
+    margin-left:6%;
 
     @media (max-width:768px){
         flex-wrap:wrap;
@@ -19,7 +19,7 @@ export const info_items = styled.p `
 export const icons = styled.div `
     display:flex;
     margin-left:auto;
-    margin-right:15%;
+    margin-right:6%;
 `
 export const facebook =  styled.div `
     

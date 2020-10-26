@@ -3,6 +3,7 @@ import * as styles from './styles'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faFacebookF,faGooglePlus, faDribbble, faPinterestP, faTwitter} from '@fortawesome/free-brands-svg-icons'
+import ColorSwitcher from "../colorswticher/colorswticher"
 import firebase from "../../firebase";
 export default class header extends React.Component{
     logOut = () =>{
@@ -13,7 +14,9 @@ export default class header extends React.Component{
         return (
            
             <div>
+                
                 <styles.header>
+                <ColorSwitcher></ColorSwitcher>
                     <styles.info>
                         <styles.info_items><FontAwesomeIcon icon={faPhone}/>&nbsp; &nbsp;(564) 123-4567</styles.info_items>
                         <styles.info_items><FontAwesomeIcon icon={faEnvelope}/>&nbsp; &nbsp; mail@example.com</styles.info_items>

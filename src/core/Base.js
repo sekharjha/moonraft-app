@@ -12,7 +12,6 @@ const Base = ({
      <Header></Header>
      <NavBar></NavBar>
 
-   
     <div>
       <div>
       </div>

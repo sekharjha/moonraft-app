@@ -2,31 +2,28 @@ import styled from 'styled-components'
 
 export const nav_container = styled.ul `
     display:flex;
-    padding-top:8px;
+    
     justify-content:flex-end;
-    margin-left:auto;
+    margin-left:25%;
     
     @media (max-width:1000px){
         display:none;
     }
     
+    
 `
-
-
 
 export const nav_tabs = styled.li  `
     
     list-style:none;
-    margin:0px 8px;
+    margin:12px 16px;
     padding-top:14px;
-    padding-left:14px;
-    padding-right:14px;
-    padding-bottom:40px;
-    height:49px;
+    height:47px;
     
     
     &:hover{
-        border-bottom: 3px solid ${props => props.color};
+        padding-bottom:40px;
+        border-bottom: 2px solid ${props => props.color};
     }
 `
 
@@ -39,17 +36,20 @@ export const navBar_container  = styled.div`
     display:flex;
     height:79px;
     box-shadow:2px 2px #f0f0f0;
+    position:sticky;
+    top:0px;
     @media (max-width:1000px){
         height:150px;
         display:block;
+        position:sticky;
+        top:0px;
     }
 `
 
 export const logo = styled.img`
     display:inline-block;
     padding-top:30px;
-    height:60px;
-    width:100px;
+    height:51px;
     margin-left:6%;
     @media (max-width:1000px){
         display:block;
@@ -59,26 +59,26 @@ export const logo = styled.img`
     
 `
 export const icons = styled.div `
-    padding-top:4px;
     display:flex;
-    margin-left:0;
-    margin-right: 3px auto;
+    margin-right:6%;
     margin-left:50px;
     @media (max-width:1000px){
         display:none;
     }
     
 `
+export const menu = styled.span `
+    display:inline-block;
+    font-size:20px;
+    transform:translate(0px,-10px);
+`
 export const icon = styled.div `
     color:#373737;
     padding-top:26px;
     margin-right:10px;
-    padding:14px;
-
 `
 export const mobile_nav = styled.div `
     display:none;
-
     @media (max-width:1000px){
         display:flex;
         width:95%;
@@ -91,11 +91,10 @@ export const mobile_nav = styled.div `
 `
 export const mobile_nav_menu = styled.div `
     display:none;
-
     @media (max-width:1000px){
         display:block;
         width:93%;
-        background-color:${props => props.color};
+        background-color:#44b272;
         padding-left:20px;
         padding-top:17px;
         color:white;
@@ -104,7 +103,6 @@ export const mobile_nav_menu = styled.div `
 `
 export const mobile_nav_search = styled.div `
     display:none;
-
     @media (max-width:1000px){
         display:block;
         width:63px;

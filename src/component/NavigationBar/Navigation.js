@@ -22,47 +22,17 @@ const currentTab = (history, path, color) => {
 class navBar extends React.Component {
     static contextType = ThemeContext;
 
-    changeColor_RED = () => {
-        const { changeTheme } = this.context;
-        changeTheme(
-            {
-                lightColor: "#FF6666",
-                darkColor: "#FF0000",
-            }
-        )
-    }
-
-    changeColor_GREEN = () => {
-        const { changeTheme } = this.context;
-        changeTheme(
-            {
-                lightColor: "#a1d8b8",
-                darkColor: "#44b272"
-            }
-        )
-    }
-
-    changeColor_BLUE = () => {
-        const { changeTheme } = this.context;
-        changeTheme(
-            {
-                lightColor: "#6272d5",
-                darkColor: "#3448c5",
-            }
-        )
-    }
 
     render() {
         const { history } = this.props;
         const { darkColor } = this.context;
 
         return (<div>
-            <styles.navBar_container>
 
+            <styles.navBar_container>
+            
                 <styles.logo src={logo} alt="logo" />
-                <button onClick={this.changeColor_RED}>red</button>
-                <button onClick={this.changeColor_GREEN}>green</button>
-                <button onClick={this.changeColor_BLUE}>blue</button>
+                
 
 
                 <styles.nav_container color={darkColor}>
@@ -71,11 +41,11 @@ class navBar extends React.Component {
                         <Link style={{ textDecoration: 'none', color: '#373737' }} exact to="/">Home</Link>
                     </styles.nav_tabs>
 
-                    <styles.nav_tabs color={darkColor}><Link to="/Portfolio" style={{ textDecoration: 'none', color: '#373737' }}>PORTFOLIO</Link></styles.nav_tabs>
-                    <styles.nav_tabs color={darkColor}><Link to="/Pages" style={{ textDecoration: 'none', color: '#373737' }}>PAGES</Link></styles.nav_tabs>
-                    <styles.nav_tabs  color={darkColor}><Link to="/Elements" style={{ textDecoration: 'none', color: '#373737' }}>ELEMENTS</Link></styles.nav_tabs>
-                    <styles.nav_tabs  color={darkColor}><Link to="/Shop" style={{ textDecoration: 'none', color: '#373737' }}>SHOP</Link></styles.nav_tabs>
-                    <styles.nav_tabs color={darkColor}><Link to="/Blog" style={{ textDecoration: 'none', color: '#373737' }}>BLOG</Link></styles.nav_tabs>
+                    <styles.nav_tabs color={darkColor}style={currentTab(history, "/Portfolio", darkColor)}><Link to="/Portfolio" style={{ textDecoration: 'none', color: '#373737' }}>PORTFOLIO</Link></styles.nav_tabs>
+                    <styles.nav_tabs color={darkColor} style={currentTab(history, "/Pages", darkColor)}><Link to="/Pages" style={{ textDecoration: 'none', color: '#373737' }}>PAGES</Link></styles.nav_tabs>
+                    <styles.nav_tabs  color={darkColor} style={currentTab(history, "/Elements", darkColor)}><Link to="/Elements" style={{ textDecoration: 'none', color: '#373737' }}>ELEMENTS</Link></styles.nav_tabs>
+                    <styles.nav_tabs  color={darkColor} style={currentTab(history, "/Shop", darkColor)}><Link to="/Shop" style={{ textDecoration: 'none', color: '#373737' }}>SHOP</Link></styles.nav_tabs>
+                    <styles.nav_tabs color={darkColor} style={currentTab(history, "/Blog", darkColor)}><Link to="/Blog" style={{ textDecoration: 'none', color: '#373737' }}>BLOG</Link></styles.nav_tabs>
                     <styles.nav_tabs color={darkColor} style={currentTab(history, "/Contact", darkColor)}><Link to="/Contact" style={{ textDecoration: 'none', color: '#373737' }}>CONTACT</Link></styles.nav_tabs>
 
                 </styles.nav_container>

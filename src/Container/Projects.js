@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import Cards from '../component/projectCards'
 import Card from '../component/projectCards/card'
 import {Data} from '../component/projectCards/data'
@@ -58,12 +59,14 @@ export default class Projects extends Component {
                         let img = images('./' + item.imageName);
                         console.log(this.state.type)
                         console.log(item.type)
-                        
+                        console.log(index);
                         if(this.state.all||this.state.type===item.type)
                         return(
+                            <Link to="/View/${index}">
                             <Cards.Column key={index}>
                                 <Card data={img} title = {item.title} subtitle = {item.subtitle} active = {1}/>
                             </Cards.Column>
+                            </Link>
                         )
                         else
                         return(
