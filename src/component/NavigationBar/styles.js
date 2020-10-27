@@ -38,7 +38,6 @@ export const navBar_container  = styled.div`
     box-shadow:2px 2px #f0f0f0;
     position:sticky;
     top:0px;
-    z-index:20000;
     @media (max-width:1000px){
         height:150px;
         display:block;
