@@ -40,3 +40,24 @@ export const Text = styled.div`
     padding: 16px 32px;
   
 `
+export const ButtonContainer = styled.div`
+    padding-top:40px;
+    padding-bottom:40px;
+    padding-left:40vw;
+    padding-right:40vw;
+`
+export const Button = styled.button`
+width: 200px;
+height: 50px;
+border-radius: 25px;
+font-size: 18px;
+color: white;
+border:none;
+font-weight: bold;
+background: ${props => props.color};
+&:hover{
+  background:white;
+  color: ${props => props.color};
+  border:1px solid ${props => props.color};
+}
+`

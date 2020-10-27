@@ -4,6 +4,7 @@ import Cards from '../component/projectCards'
 import Card from '../component/projectCards/card'
 import {Data} from '../component/projectCards/data'
 import { ThemeContext } from "../Theme";
+import {Button,ButtonContainer} from '../component/projectCards/style'
 import {withRouter} from 'react-router-dom'
  class Projects extends Component {
     static contextType = ThemeContext;
@@ -49,10 +50,10 @@ import {withRouter} from 'react-router-dom'
             <Cards>
                 <Cards.Title style ={{paddingTop:"60px"}}>Our Latest Projects</Cards.Title>
                 <Cards.Row style={{align:"center"}}>
-                <Cards.Column style = {{padding:"50px"}}><button style = {{backgroundColor:darkColor,color:"white",borderRadius:"10px",border:"none"}} onClick={this.handleClick}>ALL</button></Cards.Column>
-                <Cards.Column style = {{padding:"50px"}}><button style = {{backgroundColor:darkColor,color:"white",borderRadius:"10px",border:"none"}}onClick={this.handleClickPEOPLE}>PEOPLE</button></Cards.Column>
-                <Cards.Column style = {{padding:"50px"}}><button style = {{backgroundColor:darkColor,color:"white",borderRadius:"10px",border:"none"}}onClick={this.handleClickANIMALS}>ANIMALS</button></Cards.Column>
-                <Cards.Column style = {{padding:"50px"}}><button style = {{backgroundColor:darkColor,color:"white",borderRadius:"10px",border:"none"}}onClick={this.handleClickOTHERS}>OTHERS</button></Cards.Column>
+                <Cards.Column style = {{padding:"50px"}}><Button color={darkColor} onClick={this.handleClick}>ALL</Button></Cards.Column>
+                <Cards.Column style = {{padding:"50px"}}><Button color={darkColor} onClick={this.handleClickPEOPLE}>PEOPLE</Button></Cards.Column>
+                <Cards.Column style = {{padding:"50px"}}><Button color={darkColor} onClick={this.handleClickANIMALS}>ANIMALS</Button></Cards.Column>
+                <Cards.Column style = {{padding:"50px"}}><Button color={darkColor} onClick={this.handleClickOTHERS}>OTHERS</Button></Cards.Column>
                 </Cards.Row>
                 <Cards.Row>
                 {Data.map((item,index)=>{
@@ -80,6 +81,8 @@ import {withRouter} from 'react-router-dom'
                         )
                     })}
                     </Cards.Row>
+                    <ButtonContainer><Button color={darkColor}>View All Projects</Button></ButtonContainer>
+                    
             </Cards>
         )
     }
