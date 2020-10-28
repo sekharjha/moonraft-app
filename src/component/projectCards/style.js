@@ -41,10 +41,11 @@ export const Text = styled.div`
   
 `
 export const ButtonContainer = styled.div`
-    padding-top:40px;
-    padding-bottom:40px;
-    padding-left:40vw;
-    padding-right:40vw;
+   width:100%;
+   height:100%;
+   display:flex;
+   justify-content:center;
+   align-items:center;
 `
 export const Button = styled.button`
 width: 200px;
@@ -59,5 +60,9 @@ background: ${props => props.color};
   background:white;
   color: ${props => props.color};
   border:1px solid ${props => props.color};
+  
 }
+@media (max-width: 1366px) {
+    width:100%;
+  }
 `

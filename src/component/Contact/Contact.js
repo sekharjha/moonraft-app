@@ -42,15 +42,15 @@ class Contact extends React.Component{
                     <styles.contact_form onSubmit={this.send}>
                     <styles.heading>Contact Form</styles.heading>
                     <styles.name_email>
-                        <styles.input placeholder="Name" type = "text"
+                        <styles.input placeholder="Name" type = "text" required="required"
                             onChange={this.handleNameChange}></styles.input>
-                        <styles.input placeholder="Email" type="email"
+                        <styles.input placeholder="Email" type="email"  required="required"
                             onChange={this.handleEmailChange}></styles.input>
                         
                     </styles.name_email>
-                    <styles.input placeholder="subject" type="text"
+                    <styles.input placeholder="subject" type="text"  required="required"
                             onChange={this.handleSubjectChange}></styles.input>
-                    <styles.inputarea placeholder="Message" type="text"
+                    <styles.inputarea placeholder="Message" type="text"  required="required"
                             onChange={this.handleMessageChange}></styles.inputarea>
                     <styles.button color = {darkColor} type="submit">SUBMIT MESSAGE</styles.button>
                 </styles.contact_form>

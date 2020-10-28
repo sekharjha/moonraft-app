@@ -1,6 +1,5 @@
 import React from 'react'
 import * as styles from './styles'
-import image1 from '../../Assets/Images/project-01.jpg'
 import image2 from '../../Assets/Images/project-02.jpg'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {withRouter} from 'react-router-dom'

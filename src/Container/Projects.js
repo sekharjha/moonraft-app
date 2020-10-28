@@ -49,11 +49,11 @@ import {withRouter} from 'react-router-dom'
         return (
             <Cards>
                 <Cards.Title style ={{paddingTop:"60px"}}>Our Latest Projects</Cards.Title>
-                <Cards.Row style={{align:"center"}}>
-                <Cards.Column style = {{padding:"50px"}}><Button color={darkColor} onClick={this.handleClick}>ALL</Button></Cards.Column>
-                <Cards.Column style = {{padding:"50px"}}><Button color={darkColor} onClick={this.handleClickPEOPLE}>PEOPLE</Button></Cards.Column>
-                <Cards.Column style = {{padding:"50px"}}><Button color={darkColor} onClick={this.handleClickANIMALS}>ANIMALS</Button></Cards.Column>
-                <Cards.Column style = {{padding:"50px"}}><Button color={darkColor} onClick={this.handleClickOTHERS}>OTHERS</Button></Cards.Column>
+                <Cards.Row>
+                <Cards.Column><Button color={darkColor} onClick={this.handleClick}>ALL</Button></Cards.Column>
+                <Cards.Column><Button color={darkColor} onClick={this.handleClickPEOPLE}>PEOPLE</Button></Cards.Column>
+                <Cards.Column><Button color={darkColor} onClick={this.handleClickANIMALS}>ANIMALS</Button></Cards.Column>
+                <Cards.Column><Button color={darkColor} onClick={this.handleClickOTHERS}>OTHERS</Button></Cards.Column>
                 </Cards.Row>
                 <Cards.Row>
                 {Data.map((item,index)=>{
