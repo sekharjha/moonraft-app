@@ -4,7 +4,7 @@ import Cards from '../component/projectCards'
 import Card from '../component/projectCards/card'
 import {Data} from '../component/projectCards/data'
 import { ThemeContext } from "../Theme";
-import {Button,ButtonContainer} from '../component/projectCards/style'
+import {Button,ButtonContainer, Search} from '../component/projectCards/style'
 import {withRouter} from 'react-router-dom'
  class Projects extends Component {
     static contextType = ThemeContext;
@@ -12,7 +12,8 @@ import {withRouter} from 'react-router-dom'
         super(props);
         this.state={
             type:"PEOPLE",
-            all:true
+            all:true,
+            name:""
          }
      this.handleClickPEOPLE = this.handleClickPEOPLE.bind(this)
      this.handleClickANIMALS = this.handleClickANIMALS.bind(this)    
@@ -37,6 +38,14 @@ import {withRouter} from 'react-router-dom'
            all:false
        }))   
    }
+   handleClickSearch(valuesearch){
+    const searchValue = valuesearch.toUpperCase();
+    this.setState(state=>({
+        type : searchValue,
+        all:false,
+        name : valuesearch,
+    }))   
+}
    handleClickOTHERS(){
 
    this.setState(state=>({
@@ -49,12 +58,17 @@ import {withRouter} from 'react-router-dom'
         return (
             <Cards>
                 <Cards.Title style ={{paddingTop:"60px"}}>Our Latest Projects</Cards.Title>
+                <Cards.ButtonRow>
                 <Cards.Row>
                 <Cards.Column style = {{padding:"40px"}}><Button color={darkColor} onClick={this.handleClick}>ALL</Button></Cards.Column>
                 <Cards.Column style = {{padding:"40px"}}><Button color={darkColor} onClick={this.handleClickPEOPLE}>PEOPLE</Button></Cards.Column>
                 <Cards.Column style = {{padding:"40px"}}><Button color={darkColor} onClick={this.handleClickANIMALS}>ANIMALS</Button></Cards.Column>
                 <Cards.Column style = {{padding:"40px"}}><Button color={darkColor} onClick={this.handleClickOTHERS}>OTHERS</Button></Cards.Column>
                 </Cards.Row>
+                </Cards.ButtonRow>
+                <Cards.SearchRow>
+                <Search color={darkColor} onChange = {(e)=>this.handleClickSearch(e.target.value)}placeholder="search"></Search>
+                </Cards.SearchRow>
                 <Cards.Row>
                 {Data.map((item,index)=>{
                         const images = require.context('../Assets/Images/', true);

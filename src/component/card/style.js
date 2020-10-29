@@ -17,7 +17,7 @@ export const CardBody = styled.div`
     padding: 40px;
     &:hover {
      
-      background-image:linear-gradient(${props => props.color},white,${props => props.color})
+      background-color:${props => props.color};
       transition: 200ms ease-in;
       color:white;
   };

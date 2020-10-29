@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
     justify-content: center;
     max-width: 1600px;
     margin: 0 auto;
-    /* background: red; */
 `
 
 export const Column = styled.div`
@@ -23,7 +22,20 @@ export const Column = styled.div`
   text-align: left;
   margin-left: 0;
 `;
-
+export const ButtonRow = styled.div`
+  padding-left:14%;
+  width:50%;
+  display:grid;
+  grid-template-columns: repeat(1,auto);
+  grid-gap: 0px;
+`
+export const SearchRow = styled.div`
+  padding-left:4%;
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(1,auto);
+  grid-gap: 0px;
+`
 export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(4,auto);
