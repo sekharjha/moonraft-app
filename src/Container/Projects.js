@@ -11,7 +11,7 @@ import {withRouter} from 'react-router-dom'
     constructor(props){
         super(props);
         this.state={
-            type:"PEOPLE",
+            type:"",
             all:true,
             name:""
          }
@@ -39,12 +39,28 @@ import {withRouter} from 'react-router-dom'
        }))   
    }
    handleClickSearch(valuesearch){
-    const searchValue = valuesearch.toUpperCase();
+      
+    var searchValue = valuesearch.toUpperCase();
+    console.log(searchValue) 
+    if("ALL".includes(searchValue)||searchValue==="")
+    this.setState(state=>({
+        type:searchValue,
+        all:true,
+        name:valuesearch
+    }))
+    else{
+     if("PEOPLE".includes(searchValue))
+        searchValue = "PEOPLE"
+    else if("ANIMALS".includes(searchValue))
+        searchValue="ANIMALS"
+    else if("OTHERS".includes(searchValue))
+          searchValue = "OTHERS"                   
     this.setState(state=>({
         type : searchValue,
         all:false,
         name : valuesearch,
-    }))   
+    }))
+}
 }
    handleClickOTHERS(){
 
