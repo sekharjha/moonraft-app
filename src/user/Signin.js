@@ -61,7 +61,7 @@ import { Form,Container, FormContainer, ImageContainer,Image, Input, ButtonConta
                                   
 
                               <ButtonContainer>
-                                   <Button onClick={this.login}>Login</Button>
+                                   <Button type="submit" onClick={this.login}>Login</Button>
                                    <Button><Link style={{textDecoration:"none",color:"#438ec4"}} to="/signup">SignUp</Link></Button>
                               </ButtonContainer>
                               <p style={{color:"red"}}>{this.state.message}</p>

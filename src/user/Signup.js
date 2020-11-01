@@ -67,7 +67,7 @@ import { Form,Container, FormContainer, ImageContainer,Image, Input, ButtonConta
 
                               <ButtonContainer>
                                    <Button><Link style={{textDecoration:"none"}}  to ="/">Login</Link></Button>
-                                   <Button onClick={this.signUp}>SignUp</Button>
+                                   <Button type="submit" onClick={this.signUp}>SignUp</Button>
                               </ButtonContainer>
                          </Form>
                     </FormContainer>

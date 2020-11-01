@@ -204,3 +204,14 @@ export const button = styled.button `
         cursor: pointer;
     }
     `
+    export const SuccessMessage = styled.div`
+        width:100%;
+        max-height:20px;
+        background-color:#44b272;
+        color:#ffffff;
+        padding-top:25px;
+        padding-bottom:25px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    `

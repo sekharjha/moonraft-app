@@ -33,6 +33,7 @@ export const a = styled.a `
     color:white;
 `
 export const navBar_container  = styled.div`
+    background-color:#ffffff;
     display:flex;
     height:79px;
     box-shadow:2px 2px #f0f0f0;

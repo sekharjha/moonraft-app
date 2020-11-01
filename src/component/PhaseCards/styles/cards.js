@@ -25,9 +25,14 @@ export const Column = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(4,auto);
   grid-gap: 30px;
-
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2,auto);
+  }
+  @media (max-width: 756px) {
+    grid-template-columns: repeat(1,auto);
+  }
 `;
 export const Link = styled.a`
   color:  rgb(153, 153, 153);

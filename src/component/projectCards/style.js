@@ -37,6 +37,9 @@ export const Search = styled.input `
         border:none;
         outline:none;
     }
+    @media (max-width: 1000px) {
+        width:100%;
+      }
 `
 export const Image = styled.img`
     opacity: 1;
@@ -68,6 +71,7 @@ export const ButtonContainer = styled.div`
    justify-content:center;
    align-items:center;
    padding:30px;
+   
 `
 export const Button = styled.button`
 width: 200px;
@@ -92,7 +96,7 @@ border:1px solid ${props => props.color};
     border:none;
     outline:none;
 }
-@media (max-width: 1366px) {
+@media (max-width: 1000px) {
     width:100%;
   }
 `

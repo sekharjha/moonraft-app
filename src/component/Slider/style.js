@@ -78,15 +78,15 @@ export const ContentContainer = styled.div`
   display:flex;
   flex-direction:column;
   position:relative;
-  top:-20%;
-  left:-110%;
-  min-width:420px;
-  height:200px;
+  top:6%;
+  left:-90%;
+  min-width:435px;
+  min-height:200px;
 `
 export const Heading = styled.h2`
   display:inline;
   letter-spacing: 0px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 70px;
   border-width: 0px;
   margin: 0px 0px 0px;
@@ -100,7 +100,7 @@ export const Paragraph = styled.p`
 padding:20px;
 display:inline;
 letter-spacing: 0px;
-font-weight: 300;
+font-weight: 600;
 line-height: 40px;
 border-width: 0px;
 margin: 0px 0px 15px;
@@ -110,7 +110,7 @@ color:black;
 color:#ffffff;
 `
 export const Image = styled.img`
-  width:140vw;
+  min-width:100vw;
   opacity:0.7;
 `
 export const Button = styled.button`
@@ -129,8 +129,21 @@ export const Button = styled.button`
 `
 export const ButtonContainer = styled.div`
   padding-top:20px;
-    opacity:0.8;
+    opacity:0.9;
     &:hover{
-      opacity:1;
+      opacity:1.2;
   }
 `
+export const SmallImageContainer = styled.div`
+  position:relative;
+  top:17%;
+  left:-63%;
+  min-width:435px;
+  min-height:100px;
+`
+export const SmallImage = styled.img`
+    max-width:635px;
+    max-height:500px;
+    object-fit:contain;
+`
+

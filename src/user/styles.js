@@ -32,9 +32,7 @@ export const Form = styled.form`
     flex-direction:column;
     margin:20px;
 `
-export const Input =styled.input.attrs({ 
-    type: 'text'
-  })`
+export const Input =styled.input`
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;

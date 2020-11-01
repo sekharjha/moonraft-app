@@ -6,6 +6,9 @@ import firebase from '../../firebase'
 import { ThemeContext } from "../../Theme";
 
 class Contact extends React.Component{
+    state = {
+        success:false
+    }
     static contextType = ThemeContext;
 
     data = {
@@ -13,7 +16,6 @@ class Contact extends React.Component{
     }
     render(){
         const { darkColor } = this.context;
-
         return(
             <div>
                 <styles.location>
@@ -39,8 +41,10 @@ class Contact extends React.Component{
                         <ContactDetails sub_heading={'E-Mail:'} data={'#'} link={'office@example.com'} logo={faEnvelope}  color={darkColor}/>
     
                     </styles.find_us>
+                    
                     <styles.contact_form onSubmit={this.send}>
                     <styles.heading>Contact Form</styles.heading>
+                    <styles.SuccessMessage style={{display:this.state.success?"flex":"none"}}><p>Your Message has been sent successfully</p></styles.SuccessMessage>
                     <styles.name_email>
                         <styles.input placeholder="Name" type = "text" required="required"
                             onChange={this.handleNameChange}></styles.input>
@@ -48,11 +52,13 @@ class Contact extends React.Component{
                             onChange={this.handleEmailChange}></styles.input>
                         
                     </styles.name_email>
-                    <styles.input placeholder="subject" type="text"  required="required"
+                    <styles.input placeholder ="subject" type="text"  required="required"
                             onChange={this.handleSubjectChange}></styles.input>
                     <styles.inputarea placeholder="Message" type="text"  required="required"
                             onChange={this.handleMessageChange}></styles.inputarea>
+                            
                     <styles.button color = {darkColor} type="submit">SUBMIT MESSAGE</styles.button>
+                    
                 </styles.contact_form>
                 </styles.contact_us>
                 
@@ -87,7 +93,9 @@ class Contact extends React.Component{
             subject: this.data.subject,
             message: this.data.message
         }).then(
-            alert("message has been submitted")
+            this.setState({
+                success:true
+            })
         )
     }
 }

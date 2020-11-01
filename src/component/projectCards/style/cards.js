@@ -23,11 +23,15 @@ export const Column = styled.div`
   margin-left: 0;
 `;
 export const ButtonRow = styled.div`
-  padding-left:14%;
-  width:50%;
-  display:grid;
-  grid-template-columns: repeat(1,auto);
-  grid-gap: 0px;
+  min-width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  @media(max-width:920px){
+    display:grid;
+    grid-template-columns: repeat(1,auto);
+    grid-gap:0px;
+  }
 `
 export const SearchRow = styled.div`
   padding-left:4%;
@@ -48,6 +52,7 @@ export const Row = styled.div`
   @media(max-width:920px){
     grid-template-columns: repeat(1,auto);
     grid-gap:0px;
+    min-width:100%;
   }
 `;
 export const Link = styled.a`
