@@ -12,6 +12,8 @@ import { Form,Container, FormContainer, ImageContainer,Image, Input, ButtonConta
                password: '',
                name:'',
                heading:'SingUp',
+               message:'',
+               color:'red'
           }
      }
 
@@ -24,8 +26,17 @@ import { Form,Container, FormContainer, ImageContainer,Image, Input, ButtonConta
           firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
                .then((user) => {
                     console.log(user);
+                    this.setState({
+                         message:'user Sucessfully Signed Up',
+                         color:'green'
+                    })
+
                }).catch((error) => {
                     console.log(error);
+                    this.setState({
+                         message:JSON.stringify(error.message),
+                         color:'red'
+                    })
                })
      }
 
@@ -69,6 +80,7 @@ import { Form,Container, FormContainer, ImageContainer,Image, Input, ButtonConta
                                    <Button><Link style={{textDecoration:"none"}}  to ="/">Login</Link></Button>
                                    <Button type="submit" onClick={this.signUp}>SignUp</Button>
                               </ButtonContainer>
+                              <p style={{color:this.state.color}}>{this.state.message}</p>
                          </Form>
                     </FormContainer>
                </Container>
