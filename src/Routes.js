@@ -6,6 +6,7 @@ import View from './core/View'
 import SignIn from './user/Signin'
 import SignUp from './user/Signup'
 import firebase from "./firebase";
+import Data from "./test/data"
 class Routes extends Component{
   constructor(props) {
     super(props);
@@ -35,7 +36,7 @@ class Routes extends Component{
 
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component = {Home} />
+        <Route exact path="/home" component = {Home} />
         <Route path="/Contact" component = {Contact} />
         <Route path="/View" component = {View}/>
         <Route path="/signup" component = {SignUp}/>
@@ -49,6 +50,7 @@ class Routes extends Component{
           <Switch>
             <Route exact path="/" component = {SignIn}/>
             <Route path="/signup" component = {SignUp}/>
+            <Route path="/data" component = {Data}/>
           </Switch>
           </BrowserRouter>
       ); 

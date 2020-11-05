@@ -5,10 +5,14 @@ import {faPhone, faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faFacebookF,faGooglePlus, faDribbble, faPinterestP, faTwitter} from '@fortawesome/free-brands-svg-icons'
 import ColorSwitcher from "../colorswticher/colorswticher"
 import firebase from "../../firebase";
-export default class header extends React.Component{
+import { withRouter } from 'react-router-dom';
+ class header extends React.Component{
     logOut = () =>{
         console.log("Logout")
         firebase.auth().signOut();
+        this.props.history.push({
+            pathname: "/",
+          })
       }
       render(){
         return (
@@ -39,3 +43,4 @@ export default class header extends React.Component{
       }
 }
 
+export default withRouter(header);

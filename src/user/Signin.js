@@ -2,6 +2,7 @@ import React from "react";
 import firebase from "../firebase";
 import Img from '../Assets/Images/project-07.jpg'
 import {Link} from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 import { Form,Container, FormContainer, ImageContainer,Image, Input, ButtonContainer, Button, Heading  } from "./styles";
  export default class Login extends React.Component {
 
@@ -22,10 +23,17 @@ import { Form,Container, FormContainer, ImageContainer,Image, Input, ButtonConta
           firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
                .then((user) => {
                     console.log(user);
+                    this.props.history.push({
+                         pathname: "/home",
+                       })
                }).catch((error) => {
                     console.log(error);
+                    this.props.history.push({
+                         pathname: "/",
+                       }) 
                     this.setState({
-                         message:'Incorrect UserName or Password'  
+                         message:'Incorrect UserName or Password'
+                          
                     })
                })
      }
