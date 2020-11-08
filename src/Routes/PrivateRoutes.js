@@ -1,20 +1,28 @@
-import React from 'react'
-import { Redirect, Route, withRouter } from 'react-router-dom'
-const PrivateRoutes = ({ component: Component, ...rest }) => {
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
 
-  // Add your own authentication on the below line.
-  const isLoggedIn = localStorage.getItem("logged")
-  console.log(isLoggedIn)
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  let isLogin = localStorage.getItem("logged")
+  if(isLogin.localeCompare('true')==0)
+    isLogin = true
+  else
+    isLogin = false  
+  console.log(typeof(isLogin))
   return (
-    <Route {...rest} render={(props) => (
-        isLoggedIn === true
-          ? <Component {...props} />
-          : <Redirect to={{
-            pathname: '/',
-            state: { from: props.location }
-          }} />
-      )} />
-  )
-}
 
-export default PrivateRoutes;
+    // Show the component only when the user is logged in
+    // Otherwise, redirect the user to /signin page
+    <Route {...rest} render={props => {
+      if (isLogin) {
+        return (<Component {...props} />);
+      }
+      else {
+        console.log(isLogin)
+        return (
+          <Redirect to="/" />)
+      }
+    }} />
+  );
+};
+
+export default PrivateRoute;

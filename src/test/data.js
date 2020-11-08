@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react';
 function Data() {
   const [data,setData]=useState([]);
   const getData=()=>{
-    fetch('./text.json'
+    fetch('text.json'
     ,{
       headers : { 
         'Content-Type': 'application/json',

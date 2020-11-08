@@ -125,4 +125,10 @@ const mapStateToProps = (state) =>{
     }
 
 }
-export default withRouter(connect(mapStateToProps)(Projects))
+
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        changeType : (type) =>{dispatch({type:'CHANGE_TYPE',payload:type})}
+    }
+}
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Projects))
