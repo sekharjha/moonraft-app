@@ -1,28 +1,35 @@
-import React from 'react'
-export default class Data extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        error: null,
-        isLoaded: false,
-       items:''
-      };
+import React,{useState,useEffect} from 'react';
+
+function Data() {
+  const [data,setData]=useState([]);
+  const getData=()=>{
+    fetch('./text.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
     }
-  
-    componentDidMount() {
-      fetch("/src/reducers/text.json")
-        .then((result)=>{
-            console.log(result)
-            return result.json();
-        }).then((data)=>{
-              console.log(data);  
-        });
-        
-    }
-  
-    render() {
-      const { error, isLoaded, items } = this.state;
-      console.log(this.state.items)
-     return <div>Hello</div>;
-    }
+    )
+      .then(function(response){
+        console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(myJson);
+        setData(myJson)
+      });
   }
+  useEffect(()=>{
+    getData()
+  },[])
+  return (
+    <div className="App">
+     {
+       data && data.length>0 && data.map((item)=><p>{item.about}</p>)
+     }
+    </div>
+  );
+}
+
+export default Data;

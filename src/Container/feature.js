@@ -1,8 +1,9 @@
 import React from 'react'
 import Cards from '../component/card'
 import Card  from '../component/card/Card'
-import {Data} from '../component/card/data'
-export default function FooterContainer() {
+import {connect}  from 'react-redux'
+ function FeatureContainer(props) {
+    const Data =  props.myData 
     return (
         <Cards>
             <Cards.Title>Featured Services</Cards.Title>
@@ -20,3 +21,9 @@ export default function FooterContainer() {
         </Cards>
     )
 }
+const mapStateTopProps = (state) =>{
+    return {
+        myData:state.featureReducer
+    }
+}
+export default connect(mapStateTopProps)(FeatureContainer);

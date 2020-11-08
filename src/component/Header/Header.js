@@ -9,6 +9,7 @@ import { withRouter } from 'react-router-dom';
  class header extends React.Component{
     logOut = () =>{
         console.log("Logout")
+        localStorage.setItem("logged",false);
         firebase.auth().signOut();
         this.props.history.push({
             pathname: "/",

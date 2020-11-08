@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./core/Home";
-import Contact from "./core/Contact"
-import View from './core/View'
-import SignIn from './user/Signin'
-import SignUp from './user/Signup'
-import firebase from "./firebase";
-import Data from "./test/data"
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import Home from "../core/Home";
+import Contact from "../core/Contact"
+import View from '../core/View'
+import SignIn from '../user/Signin'
+import SignUp from '../user/Signup'
+import firebase from "../firebase";
+import Data from "../test/data"
+import PrivateRoutes from "./PrivateRoutes"
 class Routes extends Component{
   constructor(props) {
     super(props);
@@ -40,6 +41,7 @@ class Routes extends Component{
         <Route path="/Contact" component = {Contact} />
         <Route path="/View" component = {View}/>
         <Route path="/signup" component = {SignUp}/>
+        <Route path="/data" component = {Data}/>
       </Switch>
     </BrowserRouter>
   );
@@ -50,11 +52,19 @@ class Routes extends Component{
           <Switch>
             <Route exact path="/" component = {SignIn}/>
             <Route path="/signup" component = {SignUp}/>
-            <Route path="/data" component = {Data}/>
           </Switch>
           </BrowserRouter>
       ); 
      }
+  // return (
+  //   <BrowserRouter>
+  //        <PrivateRoutes  path="/home" component = {Home} />
+  //        <PrivateRoutes path="/Contact" component = {Contact} />
+  //        <PrivateRoutes path="/View" component = {View}/>
+  //        <Route path="/signup" component = {SignUp}/>
+  //        <Route exact path = "/" component={SignIn}/>
+  //    </BrowserRouter>
+  // )
        
 };
 }

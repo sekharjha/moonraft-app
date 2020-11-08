@@ -23,6 +23,7 @@ import { Form,Container, FormContainer, ImageContainer,Image, Input, ButtonConta
           firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
                .then((user) => {
                     console.log(user);
+                    localStorage.setItem("logged",true)
                     this.props.history.push({
                          pathname: "/home",
                        })

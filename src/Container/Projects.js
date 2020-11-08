@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import Cards from '../component/projectCards'
 import Card from '../component/projectCards/card'
-import {Data} from '../component/projectCards/data'
 import { ThemeContext } from "../Theme";
 import {Button,ButtonContainer, Search} from '../component/projectCards/style'
 import {withRouter} from 'react-router-dom'
- class Projects extends Component {
+import {connect} from "react-redux"
+class Projects extends Component {
     static contextType = ThemeContext;
     constructor(props){
         super(props);
@@ -38,6 +38,12 @@ import {withRouter} from 'react-router-dom'
            all:false
        }))   
    }
+   handleClickOTHERS(){
+
+    this.setState(state=>({
+        type : "OTHERS"
+    }))   
+ }
    handleClickSearch(valuesearch){
       
     var searchValue = valuesearch.toUpperCase();
@@ -62,15 +68,11 @@ import {withRouter} from 'react-router-dom'
     }))
 }
 }
-   handleClickOTHERS(){
 
-   this.setState(state=>({
-       type : "OTHERS"
-   }))   
-}
 
     render() {
         const { darkColor } = this.context;
+        const Data = this.props.myData;
         return (
             <Cards>
                 <Cards.Title style ={{paddingTop:"60px"}}>Our Latest Projects</Cards.Title>
@@ -117,4 +119,10 @@ import {withRouter} from 'react-router-dom'
         )
     }
 }
-export default withRouter(Projects)
+const mapStateToProps = (state) =>{
+    return {
+        myData:state.projectReducer
+    }
+
+}
+export default withRouter(connect(mapStateToProps)(Projects))

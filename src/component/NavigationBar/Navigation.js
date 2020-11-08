@@ -48,8 +48,8 @@ class navBar extends React.Component {
 
                 <styles.nav_container color={darkColor}>
 
-                    <styles.nav_tabs  color={darkColor} style={currentTab(history, "/", darkColor)}>
-                        <Link style={{ textDecoration: 'none', color: '#373737' }} exact to="/">HOME</Link>
+                    <styles.nav_tabs  color={darkColor} style={currentTab(history, "/home", darkColor)}>
+                        <Link style={{ textDecoration: 'none', color: '#373737' }} exact to="/home">HOME</Link>
                     </styles.nav_tabs>
 
                     <styles.nav_tabs color={darkColor}style={currentTab(history, "/Portfolio", darkColor)}><Link to="/Portfolio" style={{ textDecoration: 'none', color: '#373737' }}>PORTFOLIO</Link></styles.nav_tabs>

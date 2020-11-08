@@ -1,8 +1,11 @@
 import React from 'react'
 import Cards  from '../component/PhaseCards'
 import Card from '../component/PhaseCards/Card'
-import {Data} from '../component/PhaseCards/data'
-export default function Phases() {
+import {connect} from "react-redux"
+
+ function Phases(props) {
+    const Data = props.myData
+     
     return (
         <Cards>
             <Cards.Wrapper>
@@ -20,3 +23,9 @@ export default function Phases() {
         </Cards>
     )
 }
+const mapStateTopProps = (state) =>{
+    return {
+        myData:state.phaseReducer
+    }
+}
+export default connect(mapStateTopProps)(Phases);
